@@ -1,3 +1,4 @@
+// product
 function Product(props){
     return(
         <div className="product">
