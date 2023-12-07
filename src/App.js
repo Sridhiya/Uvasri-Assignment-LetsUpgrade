@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import Products_list from './Products_list';
 
 function App() {
+  function handleClick(data) {
+    console.log("Helooo im clicked " + data);
+    // alert("im alert opened");
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Products_list />
+      {/* <button className='btn' onClick={handleClick}>Click</button> */}
+      <button className='btn' onClick={(event) => {
+        console.log("event", event);
+        console.log("event.target", event.target);
+        console.log("event.target.value", event.target.value);
+        handleClick("Uvasri")
+      }}>Click</button>
     </div>
   );
 }
